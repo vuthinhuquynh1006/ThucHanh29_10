@@ -1,1 +1,40 @@
+namespace DTO
+{
+    public class ChiTietPhieuKhoDTO
+    {
+        public int MaPhieu { get; set; }
+        public string MaVatTu { get; set; }
+        public decimal SoLuong { get; set; }
+        public decimal DonGia { get; set; }
+        public decimal ThanhTien => SoLuong * DonGia;
+    }
+}
+using System;
+using System.Collections.Generic;
 
+
+
+namespace DTO
+{
+    public class PhieuKhoDTO
+    {
+        public int MaPhieu { get; set; }
+        public string LoaiPhieu { get; set; } // "NHAP" hoặc "XUAT"
+        public DateTime NgayLap { get; set; }
+        public int? MaNCC { get; set; }
+        public decimal TongTien { get; set; }
+        public List<ChiTietPhieuKhoDTO> ChiTietList { get; set; } = new List<ChiTietPhieuKhoDTO>();
+    }
+}
+
+
+namespace DTO
+{
+    public class VatTuDTO
+    {
+        public string MaVatTu { get; set; }
+        public string TenVatTu { get; set; }
+        public string DVT { get; set; }
+        public decimal SoLuongTon { get; set; }
+    }
+}
